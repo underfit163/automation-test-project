@@ -1,0 +1,4 @@
+Binary Addition Test,add,BIN,110,BIN,10,1000
+Octal Subtraction Test,sub,OCT,75,OCT,5,70
+Decimal Multiplication Test,mul,DEC,15,DEC,3,45.0
+Hexadecimal Division Test,div,HEX,1F,HEX,5,6
