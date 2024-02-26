@@ -1,0 +1,6 @@
+<mat-form-field appearance="outline">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput [formControl]="numberFormControl" (input)="handleInput($event)"/>
+    <mat-error *ngIf="numberFormControl.errors?.['required']">Заполнение обязательно!</mat-error>
+    <mat-error *ngIf="numberFormControl.errors?.['pattern']">Заполняйте допустимыми значениями!</mat-error>
+</mat-form-field>

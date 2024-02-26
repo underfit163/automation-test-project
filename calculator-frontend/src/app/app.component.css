@@ -1,0 +1,23 @@
+body,
+html,
+:host {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+}
+
+.base-container {
+  display: flex;
+  justify-content: left;
+  margin: 15px auto;
+}
+
+.button-container {
+  margin: 10px auto;
+}

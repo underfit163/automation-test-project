@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AmplicodePersistenceUnitSettings">
+    <persistence-units>
+      <persistence-unit moduleName="calculator-backend" name="Default">
+        <packages>
+          <package value="com.underfit.calculatorbackend" />
+        </packages>
+      </persistence-unit>
+    </persistence-units>
+  </component>
+  <component name="AmplicodeSpringConfig" isAmplicodeImported="true" />
+</project>

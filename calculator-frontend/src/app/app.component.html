@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Калькулятор</h1>
+  <form #f="ngForm" [formGroup]="form" autocomplete="off">
+    <mat-form-field appearance="outline">
+      <mat-label>Система счисления</mat-label>
+      <mat-select formControlName="base" (selectionChange)="onBaseAndOperationChange()">
+        <mat-option *ngFor="let numSystem of enumToArr(eNumberSystem)" [value]="numSystem">
+          {{numSystem}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.controls['operation'].errors?.['required']">Выбрать обязательно!</mat-error>
+    </mat-form-field>
+    <app-number-input label="Операнд 1" [form]="form"
+                      [numberFormControl]="$any(form).controls['num1']"></app-number-input>
+    <mat-form-field appearance="outline">
+      <mat-label>Операция</mat-label>
+      <mat-select formControlName="operation" (selectionChange)="onBaseAndOperationChange()">
+        <mat-option *ngFor="let operation of enumToArr(eOperation)" [value]="operation">
+          {{operation}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.controls['operation'].errors?.['required']">Выбрать обязательно!</mat-error>
+    </mat-form-field>
+    <app-number-input label="Операнд 2" [form]="form"
+                      [numberFormControl]="$any(form).controls['num2']"></app-number-input>
+  </form>
+  <div>
+    <button class="button-container" mat-raised-button color="primary" [disabled]="form.invalid"
+            (click)="onGetResult()">Вычислить</button>
+  </div>
+  <mat-card appearance="outlined" *ngIf="showResult">
+    <mat-card-content [changeColor]="result">{{result |roundNumber}}</mat-card-content>
+  </mat-card>
+  <router-outlet/>
+</div>
