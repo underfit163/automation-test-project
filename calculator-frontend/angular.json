@@ -96,11 +96,49 @@
             ],
             "scripts": []
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "calculator-frontend:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "calculator-frontend:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "calculator-frontend:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "calculator-frontend:serve:production"
+            }
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "120ba3af-06d4-4732-b5a4-3146626b0ae6"
+    "analytics": "120ba3af-06d4-4732-b5a4-3146626b0ae6",
+    "schematicCollections": [
+      "@cypress/schematic",
+      "@cypress/schematic",
+      "@cypress/schematic",
+      "@cypress/schematic",
+      "@schematics/angular"
+    ]
   }
 }

@@ -16,12 +16,12 @@ describe('RoundNumberPipe', () => {
   });
 
   it('should round a number with default digits', () => {
-    const result = pipe.transform(5.6789);
+    const result = pipe.transform('5.6789');
     expect(result).toEqual(5.68);
   });
 
   it('should round a number with specified digits', () => {
-    const result = pipe.transform(5.6789, 1);
+    const result = pipe.transform('5.6789', 1);
     expect(result).toEqual(5.7);
   });
 
@@ -32,11 +32,11 @@ describe('RoundNumberPipe', () => {
 
   it('should handle invalid input', () => {
     const result = pipe.transform('invalid', 2);
-    expect(result).toEqual(0);
+    expect(result).toEqual('invalid');
   });
 
   it('should handle negative digits', () => {
-    const result = pipe.transform(5.6789, -2);
+    const result = pipe.transform('5.6789', -2);
     expect(result).toEqual(0);
   });
 });

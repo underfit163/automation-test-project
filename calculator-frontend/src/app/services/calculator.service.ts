@@ -20,8 +20,8 @@ export class CalculatorService {
   constructor(private http: HttpClient) {
   }
 
-  getResult(operation: string, base1: string, num1: string, base2: string, num2: string): Observable<number | string> {
-    return this.http.get<number | string>(
+  getResult(operation: string, base1: string, num1: string, base2: string, num2: string): Observable<string> {
+    return this.http.get<string>(
       `${HOST}/calculator/calculate/${operation}/${base1}/${num1}/${base2}/${num2}`, httpOptionsPlain)
   }
 }

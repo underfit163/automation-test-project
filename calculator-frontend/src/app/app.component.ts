@@ -41,7 +41,7 @@ export class AppComponent {
     form: FormGroup;
     protected readonly eOperation = EOperation;
     protected readonly eNumberSystem = ENumberSystem;
-    result: number | string  = "";
+    result: string  = "";
     showResult: boolean = false;
 
     constructor(private calcService: CalculatorService, private fb: FormBuilder) {

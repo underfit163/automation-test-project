@@ -3,7 +3,7 @@
   <form #f="ngForm" [formGroup]="form" autocomplete="off">
     <mat-form-field appearance="outline">
       <mat-label>Система счисления</mat-label>
-      <mat-select formControlName="base" (selectionChange)="onBaseAndOperationChange()">
+      <mat-select class="base-select" formControlName="base" (selectionChange)="onBaseAndOperationChange()">
         <mat-option *ngFor="let numSystem of enumToArr(eNumberSystem)" [value]="numSystem">
           {{numSystem}}
         </mat-option>
@@ -14,7 +14,7 @@
                       [numberFormControl]="$any(form).controls['num1']"></app-number-input>
     <mat-form-field appearance="outline">
       <mat-label>Операция</mat-label>
-      <mat-select formControlName="operation" (selectionChange)="onBaseAndOperationChange()">
+      <mat-select class="op-select" formControlName="operation" (selectionChange)="onBaseAndOperationChange()">
         <mat-option *ngFor="let operation of enumToArr(eOperation)" [value]="operation">
           {{operation}}
         </mat-option>

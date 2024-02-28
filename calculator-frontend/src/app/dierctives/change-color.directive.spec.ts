@@ -21,7 +21,7 @@ describe('ChangeColorDirective', () => {
   });
 
   it('should set color to red when result is less than 0', () => {
-    testComponent.result = -5;
+    testComponent.result = '-5';
     fixture.detectChanges();
 
     fixture.whenStable().then(() => {
@@ -36,7 +36,7 @@ describe('ChangeColorDirective', () => {
   });
 
   it('should set color to black when result is 0', () => {
-    testComponent.result = 0;
+    testComponent.result = '0';
     fixture.detectChanges();
 
     fixture.whenStable().then(() => {
@@ -51,7 +51,7 @@ describe('ChangeColorDirective', () => {
   });
 
   it('should set color to green when result is greater than 0', () => {
-    testComponent.result = 5;
+    testComponent.result = '5';
     fixture.detectChanges();
 
     fixture.whenStable().then(() => {
@@ -66,7 +66,7 @@ describe('ChangeColorDirective', () => {
   });
 
   it('should update color when result changes', () => {
-    testComponent.result = -5;
+    testComponent.result = '-5';
     fixture.detectChanges();
 
     fixture.whenStable().then(() => {
@@ -78,7 +78,7 @@ describe('ChangeColorDirective', () => {
         fail('ChangeColorDirective not found on the element');
       }
 
-      testComponent.result = 10;
+      testComponent.result = '10';
       fixture.detectChanges();
 
       fixture.whenStable().then(() => {

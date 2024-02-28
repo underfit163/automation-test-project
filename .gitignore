@@ -1,4 +1,4 @@
-!./dockerfiles/db_automationtest_data/
+./dockerfiles/db_automationtest_data/
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -32,3 +32,4 @@ build/
 
 ### VS Code ###
 .vscode/
+/dockerfiles/db_automationtest_data/
